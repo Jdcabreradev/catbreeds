@@ -4,9 +4,9 @@ import 'package:catbreeds/models/cat_entity.dart';
 import 'package:flutter/material.dart';
 
 class CatItemHeaderWidget extends StatelessWidget {
-  const CatItemHeaderWidget({super.key, required this.cat});
-
   final CatEntity cat;
+
+  const CatItemHeaderWidget({super.key, required this.cat});
 
   @override
   Widget build(BuildContext context) {
