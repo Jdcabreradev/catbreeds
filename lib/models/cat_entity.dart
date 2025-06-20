@@ -6,7 +6,6 @@ class CatEntity {
   final String origin; // País o región de origen
   final String description; // Descripción general
   final String lifeSpan; // Esperanza de vida ("12 - 15")
-  final int indoor; // 1=interior, 0=no
   final int adaptability; // 1–5
   final int affectionLevel; // 1–5
   final int childFriendly; // 1–5
@@ -29,7 +28,6 @@ class CatEntity {
     required this.origin,
     required this.description,
     required this.lifeSpan,
-    required this.indoor,
     required this.adaptability,
     required this.affectionLevel,
     required this.childFriendly,
@@ -53,7 +51,6 @@ class CatEntity {
     origin: json['origin'] as String,
     description: json['description'] as String,
     lifeSpan: json['life_span'] as String,
-    indoor: json['indoor'] as int,
     adaptability: json['adaptability'] as int,
     affectionLevel: json['affection_level'] as int,
     childFriendly: json['child_friendly'] as int,
@@ -77,7 +74,6 @@ class CatEntity {
     'origin': origin,
     'description': description,
     'life_span': lifeSpan,
-    'indoor': indoor,
     'adaptability': adaptability,
     'affection_level': affectionLevel,
     'child_friendly': childFriendly,

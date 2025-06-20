@@ -12,6 +12,7 @@ final router = GoRouter(
         return Scaffold(
           resizeToAvoidBottomInset: false,
           body: Container(
+            padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
             width: double.infinity,
             height: double.infinity,
             decoration: const BoxDecoration(

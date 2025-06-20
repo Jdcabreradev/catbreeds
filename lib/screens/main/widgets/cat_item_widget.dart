@@ -11,14 +11,17 @@ class CatItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 4,
-      margin: const EdgeInsets.only(bottom: 25),
-      clipBehavior: Clip.hardEdge,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      child: InkWell(
-        onTap: () => context.push('/details', extra: [cat, heroTag]),
-        child: CatItemImageWidget(cat: cat, heroTag: heroTag, height: 300),
+    return Hero(
+      tag: heroTag,
+      child: Card(
+        elevation: 4,
+        margin: const EdgeInsets.only(bottom: 25),
+        clipBehavior: Clip.hardEdge,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        child: InkWell(
+          onTap: () => context.push('/details', extra: [cat, heroTag]),
+          child: CatItemImageWidget(cat: cat, height: 300),
+        ),
       ),
     );
   }
