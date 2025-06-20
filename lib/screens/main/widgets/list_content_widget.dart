@@ -1,5 +1,5 @@
 import 'package:catbreeds/state/cat_list_state.dart';
-import 'package:catbreeds/widgets/cat_item_widget.dart';
+import 'package:catbreeds/screens/main/widgets/cat_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

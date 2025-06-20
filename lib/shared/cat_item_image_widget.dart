@@ -1,24 +1,26 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:catbreeds/models/cat_entity.dart';
-import 'package:catbreeds/widgets/cat_item_header_widget.dart';
+import 'package:catbreeds/screens/main/widgets/cat_item_header_widget.dart';
 import 'package:flutter/material.dart';
 
 class CatItemImageWidget extends StatelessWidget {
+  final CatEntity cat;
+  final String heroTag;
+  final double height;
+
   const CatItemImageWidget({
     super.key,
     required this.cat,
     required this.heroTag,
+    required this.height,
   });
-
-  final CatEntity cat;
-  final String heroTag;
 
   @override
   Widget build(BuildContext context) {
     return Hero(
       tag: heroTag,
       child: SizedBox(
-        height: 300,
+        height: height,
         child: Stack(
           fit: StackFit.expand,
           children: [

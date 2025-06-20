@@ -1,6 +1,6 @@
 import 'package:catbreeds/models/cat_entity.dart';
-import 'package:catbreeds/screens/details_screen.dart';
-import 'package:catbreeds/screens/main_screen.dart';
+import 'package:catbreeds/screens/details/details_screen.dart';
+import 'package:catbreeds/screens/main/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -14,7 +14,6 @@ final router = GoRouter(
           body: Container(
             width: double.infinity,
             height: double.infinity,
-            padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [
