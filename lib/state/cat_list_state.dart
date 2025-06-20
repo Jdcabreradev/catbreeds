@@ -56,7 +56,7 @@ class CatListNotifier extends StateNotifier<CatListState> {
   Timer? _searchDebounceTimer;
   String _lastQuery = '';
 
-  CatListNotifier(this._service, [this._limit = 5])
+  CatListNotifier(this._service, [this._limit = 10])
     : super(CatListState.initial()) {
     _initialize();
   }
@@ -81,7 +81,9 @@ class CatListNotifier extends StateNotifier<CatListState> {
   Future<void> loadNextPage() async {
     if (state.isLoading || !state.hasMore || mounted == false) return;
 
-    state = state.copyWith(isLoading: true, error: null);
+    if (_initialized) {
+      state = state.copyWith(isLoading: true, error: null);
+    }
 
     try {
       final nextPage = state.query.isEmpty ? state.page : 0;
@@ -166,7 +168,7 @@ final scrollControllerProvider = Provider.autoDispose<ScrollController>((ref) {
 
   void onScroll() {
     if (controller.position.pixels >=
-        controller.position.maxScrollExtent - 200) {
+        controller.position.maxScrollExtent - 500) {
       ref.read(catListProvider.notifier).loadNextPage();
     }
   }
@@ -198,6 +200,12 @@ final searchControllerProvider = Provider.autoDispose<TextEditingController>((
   });
 
   return controller;
+});
+
+final focusNodeProvider = Provider.autoDispose<FocusNode>((ref) {
+  final node = FocusNode();
+  ref.onDispose(node.dispose);
+  return node;
 });
 
 final catAPIServiceProvider = Provider<CatAPIService>((ref) => CatAPIService());

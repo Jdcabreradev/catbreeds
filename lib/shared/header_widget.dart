@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class HeaderWidget extends StatelessWidget {
-  const HeaderWidget({super.key});
+  final String headerText;
+
+  const HeaderWidget({super.key, required this.headerText});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +12,7 @@ class HeaderWidget extends StatelessWidget {
         Image.asset('assets/imgs/cat-small.png'),
         SizedBox(width: 5),
         Text(
-          'CatBreeds',
+          headerText,
           style: TextStyle(
             fontFamily: "Poppins",
             fontWeight: FontWeight.w600,
