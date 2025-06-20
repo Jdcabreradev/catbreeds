@@ -1,7 +1,7 @@
 # 🐱 CatBreeds
 
 <div align="center">
-  <img src="assets/imgs/cat-small.png" alt="CatBreeds Logo" width="80" height="80">
+  <img src="assets/splash/launcher_icon_dark.png" alt="CatBreeds Logo" width="80" height="80">
   <h3>Discover the World of Cat Breeds</h3>
   <p>A beautiful Flutter app to explore different cat breeds with detailed information and stunning images</p>
 </div>
